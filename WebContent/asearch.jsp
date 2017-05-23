@@ -8,7 +8,7 @@
 
 <script>
 var request;
-function sendInfo()
+function sendInfo()   //搜索页面传送数据到afindname
 {
 var branch=document.myform.select.value;
 var v=document.myform.findName.value;
@@ -28,14 +28,14 @@ request.send();
 catch(e){alert("Unable to connect to server");}
 }
 
-function getInfo(){
+function getInfo(){    //服务器响应完成后将info信息调用到location
 if(request.readyState==4){
 var val=request.responseText;
 document.getElementById('location').innerHTML=val;
 }
 }
 
-function aviewAll(name)
+function aviewAll(name)    	//被afindinfo调用viewall方法
 {
 var v=name;
 var url="aviewall.jsp?val="+v;
@@ -57,7 +57,7 @@ catch(e){alert("Unable to connect to server");}
 }
 
 
-function getAllInfo(){
+function getAllInfo(){    //服务器响应完成后将allinfo信息调用到bottom
 if(request.readyState==4){
 var val=request.responseText;
 document.getElementById('bottom').innerHTML=val;
@@ -87,23 +87,21 @@ request.setAttribute("notlogin_msg","Sorry,Please do Login first");
 
 <h3 style="color: navy;" align="center"><B>Search accountant details</B></h3>
 
-<div id="box">
+<div id="box"  align="center">
 
-<form name="myform" >
+<form name="myform"  >
 
-<table align="center" ><tr><td><font style="color: navy;">Branch:</font></td><td><select name="branch" id="select">
+<table align="center" ><tr><td><font style="color: navy;">Branch:</font></td><td><select style="width:120px;" name="branch" id="select">
 					<option>Select a Branch</option>
 					<option>Accountant</option>
 					<option>Company</option>
 					<option>Student</option>
 					</select></td></tr>
 					<tr><td><br></td></tr>
-<tr><td><font style="color: navy;">Find:-</font></td><td><input type="text" align="right" name="findName" onkeyup="sendInfo()"></input></td></tr></table>
-<div id="right" align="right">
+<tr><td><font  style="color: navy;">Find:-</font></td><td><input style="width:120px;" type="text" align="right" name="findName" onkeyup="sendInfo()"></input></td></tr></table>
 
-</div>
 
-<div id="location" align="center"></div>
+<div id="location"  align="justify"></div>
 </form>
 
 <div id="bottom" align="justify"></div>
