@@ -13,8 +13,10 @@ PreparedStatement ps=con.prepareStatement("select * from student where id ='"+n+
 //ps.setString(1,n);
 ResultSet rs=ps.executeQuery();
 out.print("<br>");
-out.print("<table align='center' border='5' cellspacing=5 cellpadding=2>");
-out.print("<tr><td><a href='#' name='"+rs.getString(1)+"' onmouseover='javascript:sendGenInfo(this.name)' ><font style='color: navy;'><B>General Information</B></font></a></td><td>");
+
+out.print("<a href='#'   onmouseover='javascript:viewAllInfo1(this.name)' >   <font align ='center' style='color: navy;'><B>General Information</B></font></a> ");
+ 
+out.print("<table   border='5' cellspacing=5 cellpadding=2>");
 
 
 while(rs.next()){
@@ -23,10 +25,9 @@ out.print("<tr><td><B>Name</B></td><td>"+rs.getString(2)+"</td></tr>");
 out.print("<tr><td><B>Course</B></td><td>"+rs.getString(3)+"</td></tr>");
 out.print("<tr><td><B>Mobile</B></td><td>"+rs.getString(4)+"</td></tr>");
 out.print("<tr><td><B>Date of submission</B></td><td>"+rs.getString(5)+"</td></tr>");
-out.print("<tr><td><B>Total Fee</B></td><td>"+rs.getString(6)+"</td></tr>");
-out.print("<tr><td><B>Paid Amount</B></td><td>"+rs.getString(7)+"</td></tr>");
+out.print("<tr><td><B>Total Fee</B></td><td>"+rs.getString(7)+"</td></tr>");
+out.print("<tr><td><B>Paid Amount</B></td><td>"+rs.getString(6)+"</td></tr>");
 out.print("<tr><td><B>Balance</B></td><td>"+rs.getString(8)+"</td></tr>");
-out.print("<a href='#' name='"+rs.getString(1)+"' onmouseover='javascript:sendGenInfo(this.name)' ><font style='color: navy;'><B>General Information</B></font></a>");
 }
 out.print("</table>");
 con.close();

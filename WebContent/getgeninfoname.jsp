@@ -9,10 +9,10 @@ try{
 Class.forName("oracle.jdbc.driver.OracleDriver");
 Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:projetpay","accountant","1994");
 
-PreparedStatement ps=con.prepareStatement("select * from student where id='"+n+"'");
+PreparedStatement ps =con.prepareStatement("select * from student where id='"+n+"'");
 
-//ps.setString(1,n);
 ResultSet rs=ps.executeQuery();
+
 out.print("<br>");
 out.print("<form action='save1.jsp' name='myform' id='myform'>");
 out.print("<table cellspacing=15 cellpadding=15>");
@@ -28,8 +28,8 @@ out.print("<tr><td><B>Qualification:</B></td><td><input type='text' name='qualif
 out.print("<tr><td><B>Date of Birth:</B></td><td><input type='text' name='dateofbirth' value='"+rs.getString(12)+"'></input></td></tr>");
 out.print("<tr><td><B>Date of Joining:</B></td><td><input type='text' name='dateofjoining' value='"+rs.getString(14)+"'></input></td></tr>");
 out.print("<tr><td><B>Date of Submission:</B></td><td><input type='text' name='datefeesub' value='"+rs.getString(5)+"'></input></td></tr>");
-out.print("<tr><td><B>Paid:</B></td><td><input type='text' name='paid' value='"+rs.getString(7)+"'></input></td></tr>");
-out.print("<tr><td><B>Fee:</B></td><td><input type='text' name='fee' value='"+rs.getString(6)+"'></input></td></tr>");
+out.print("<tr><td><B>Paid:</B></td><td><input type='text' name='paid' value='"+rs.getString(6)+"'></input></td></tr>");
+out.print("<tr><td><B>Fee:</B></td><td><input type='text' name='fee' value='"+rs.getString(7)+"'></input></td></tr>");
 out.print("<tr><td><B>Balance:</B></td><td><input type='text' name='balance' value='"+rs.getString(8)+"'></input></td></tr>");
 out.print("<tr><td><B>Address:</B></td><td><input type='text' name='address' value='"+rs.getString(9)+"'></input></td></tr>");
 out.print("<tr><td><B>Description:</B></td><td><input type='text' name='description' value='"+rs.getString(15)+"'></input></td></tr>");
@@ -39,6 +39,7 @@ out.print("</form>");
 }
 
 con.close();
+
 }catch(Exception e){e.printStackTrace();}
 }//end of if
 %>

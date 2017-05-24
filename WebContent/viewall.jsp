@@ -13,12 +13,12 @@ PreparedStatement ps=con.prepareStatement("select * from student where id ='"+n+
 //ps.setString(1,n);
 ResultSet rs=ps.executeQuery();
 out.print("<br>");
-out.print("<table align=center border='5' cellspacing=5 cellpadding=2>");
-out.print("<tr><td><a href='#' name='ID' onmouseover='javascript:getGenInfo(this.name)'><B>ID</B></a></td><td><B>Total Fee</B></td><td><B>Paid Amount</B></td><td><B>Balance</B></td></tr>");
+out.print("<table  border='5' cellspacing=5 cellpadding=2>");
+out.print("<tr><td><a href='#' name='ID' onmouseover='javascript:viewAllInfo1(this.name)'><B>ID</B></a></td><td><B>Total Fee</B></td><td><B>Paid Amount</B></td><td><B>Balance</B></td></tr>");
 while(rs.next()){
 out.print("<tr><td><a href='#' name='"+rs.getString(1)+"' onmouseover='javascript:viewAllInfo(this.name)'>"+rs.getString(1)+"</a></td>");
-out.print("<td>"+rs.getString(6)+"</td>");
 out.print("<td>"+rs.getString(7)+"</td>");
+out.print("<td>"+rs.getString(6)+"</td>");
 out.print("<td>"+rs.getString(8)+"</td>");
 out.print("</tr>");
 }

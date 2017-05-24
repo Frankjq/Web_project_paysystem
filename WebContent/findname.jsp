@@ -15,7 +15,7 @@ out.print("<br>");
 ResultSet rs=ps.executeQuery();
 
 out.print("<table  align='center' border='5' cellspacing=5 cellpadding=2 id='myTable'>");
-out.print("<tr><td><a href='#' name='ID' onmouseover='javascript:getGenInfo(this.name)'><B>ID</B></a></td><td><B>Name</B></td><td><B>Mobile</B></td></tr>");
+out.print("<tr><td><a href='#' name='ID' onmouseover='javascript:viewAllInfo1(this.name)'><B>ID</B></a></td><td><B>Name</B></td><td><B>Mobile</B></td></tr>");
 while(rs.next()){
 out.print("<tr><td><a href='#' name='"+rs.getString(1)+"' onmouseover='javascript:viewAll(this.name)'>"+rs.getString(1)+"</a></td>");
 out.print("<td>"+rs.getString(2)+"</td>");

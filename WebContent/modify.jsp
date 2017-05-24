@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%> 
 <html>
 <head>
-
+<title>Modify</title>
 <script>
 var request;
 function sendInfo()
@@ -84,9 +84,12 @@ request.setAttribute("notlogin_msg","Sorry,Please do Login first");
 
 <form action="save1.jsp" name="myform" id="hello" method="post">
 <table width="100%" >
+
+
 <tr>
 <td>
-	<table style="table-layout: fixed;" width="55%" align="left" >
+
+<table style="table-layout: fixed;" width="55%" align="left" >
 
 
 <table  align="left"   cellspacing=15 cellpadding=15">
@@ -111,12 +114,12 @@ request.setAttribute("notlogin_msg","Sorry,Please do Login first");
 </table>
 
 	
+	
+	
+	
 	<table   align="right" width="35%" >
-		<tr>
-		<td><font style="color: navy;"><B>Search:</B></font><input type="text" name="findName" onkeyup="sendInfo()"></input></td>
-		</tr>
+		<tr><td><font style="color: navy;"><B>Search:</B></font><input type="text" name="findName" onkeyup="sendInfo()"></input></td></tr>
 		<tr><td><div id="hi"></div></td></tr>
-
 	</table>
 		
 </table>

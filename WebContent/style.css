@@ -285,10 +285,15 @@ ul {
 	padding:5,5,5,5;
 
 }
+#next{
+	width: 400px;
+	padding:5,5,5,5;
+	height:200px;
+}
 #bottom{
 	width: 400px;
 	padding:5,5,5,5;
-		height:100px;
+		height:400px;
 	
 }
 #find{
